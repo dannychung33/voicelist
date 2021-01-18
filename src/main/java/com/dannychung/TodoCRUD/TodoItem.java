@@ -1,14 +1,22 @@
 package com.dannychung.TodoCRUD;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-@Entity
+@Entity(name="todo_item")
+@Table(name="todo_item")
 public class TodoItem {
+	@Column
 	private String title;
-	private String body;
+	@Column
+	private byte done;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	protected TodoItem() {
@@ -20,16 +28,15 @@ public class TodoItem {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getBody() {
-		return body;
+	public byte getDone() {
+		return done;
 	}
-	public void setBody(String body) {
-		this.body = body;
+	public void setDone(byte done) {
+		this.done = done;
 	}
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	public long getId() {
-		return id;
+		return (id);
 	}
 	public void setId(long id) {
 		this.id = id;

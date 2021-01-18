@@ -8,6 +8,7 @@ public class TodoCrudApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TodoCrudApplication.class, args);
+
 	}
 
 }
